@@ -12,7 +12,8 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.3.1');
-  api.addFiles('dmihal:slack.js');
+  api.addFiles('slack-server.js','server');
+  api.addFiles('slack-client.js','client');
 });
 
 Package.onTest(function(api) {
