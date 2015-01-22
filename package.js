@@ -2,7 +2,7 @@ Package.describe({
   name: 'dmihal:slack',
   version: '0.0.1',
   // Brief, one-line summary of the package.
-  summary: '',
+  summary: 'Allows access to the Meteor API and other reactive features',
   // URL to the Git repository containing the source code for this package.
   git: '',
   // By default, Meteor will default to using README.md for documentation.
@@ -11,6 +11,8 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
+  api.use('livedata',['client','server']);
+  api.use('http', ['server']);
   api.use('acemtp:accounts-slack',['client','server']);
   api.use('service-configuration', 'server');
   
