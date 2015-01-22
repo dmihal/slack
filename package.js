@@ -11,6 +11,9 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
+  api.use('acemtp:accounts-slack',['client','server']);
+  api.use('service-configuration', 'server');
+  
   api.versionsFrom('1.0.3.1');
   api.addFiles('slack-server.js','server');
   api.addFiles('slack-client.js','client');
