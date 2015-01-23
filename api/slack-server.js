@@ -9,6 +9,7 @@ getAccessToken = function(userId) {
 
 slackMethod = function(options){
   return function(args){
+    args = args || {};
     var token = args.token || getAccessToken(this.userId);
     if (!token){
       throw new Error("User is not authenticated with Slack");
@@ -46,5 +47,12 @@ Meteor.methods({
   'slack-post': slackMethod({
     method: 'POST',
     url: 'https://slack.com/api/chat.postMessage'
+  }),
+  'slack-users-list': slackMethod({
+    method: 'GET',
+    url: 'https://slack.com/api/users.list',
+    parser: function(data){
+      return data.members;
+    }
   })
 });
