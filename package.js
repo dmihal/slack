@@ -16,6 +16,9 @@ Package.onUse(function(api) {
   api.addFiles('slack-server.js','server');
   api.addFiles('channels.js','server');
   api.addFiles('slack-client.js','client');
+  api.addFiles('slack-models.js',['client','server']);
+
+  api.export('Slack');
 });
 
 Package.onTest(function(api) {
