@@ -9,6 +9,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.use('livedata',['client','server']);
   api.use('http', ['server']);
+  api.use('underscore', ['client','server']);
   api.use('acemtp:accounts-slack',['client','server']);
   api.use('service-configuration', 'server');
   

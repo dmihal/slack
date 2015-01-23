@@ -42,8 +42,8 @@ Meteor.methods({
         params: {
           token: token,
           channel: args.channel,
-          text: "Api test",
-          username: "My Bot"
+          text: args.message,
+          username: args.username || "Slackbot"
         }
       });
     } catch (e){
