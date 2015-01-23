@@ -35,3 +35,8 @@ Posts a message to the channel from a bot.
 ### User
 The User object contains all the properties of a [Slack User object](https://api.slack.com/types/user).
 
+Licence
+=======
+Copyright (c) 2015 David Mihal.
+
+This projected is licensed under the terms of the MIT license.
