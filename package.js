@@ -1,6 +1,6 @@
 Package.describe({
   name: 'dmihal:slack',
-  version: '0.0.1',
+  version: '0.1.0',
   summary: 'Allows access to the Meteor API and other reactive features',
   git: 'https://github.com/dmihal/slack.git',
   documentation: 'README.md'
@@ -23,10 +23,4 @@ Package.onUse(function(api) {
   api.addFiles('models/users.js',['client','server']);
 
   api.export('Slack');
-});
-
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('dmihal:slack');
-  api.addFiles('dmihal:slack-tests.js');
 });
