@@ -1,12 +1,8 @@
 Package.describe({
   name: 'dmihal:slack',
   version: '0.0.1',
-  // Brief, one-line summary of the package.
   summary: 'Allows access to the Meteor API and other reactive features',
-  // URL to the Git repository containing the source code for this package.
-  git: '',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
+  git: 'https://github.com/dmihal/slack.git',
   documentation: 'README.md'
 });
 
@@ -18,6 +14,7 @@ Package.onUse(function(api) {
   
   api.versionsFrom('1.0.3.1');
   api.addFiles('slack-server.js','server');
+  api.addFiles('channels.js','server');
   api.addFiles('slack-client.js','client');
 });
 
