@@ -10,10 +10,10 @@ Package.onUse(function(api) {
   api.use('livedata',['client','server']);
   api.use('http', ['server']);
   api.use('underscore', ['client','server']);
-  api.use('acemtp:accounts-slack',['client','server']);
+  api.use('acemtp:accounts-slack@1.0.0',['client','server']);
   api.use('service-configuration', 'server');
   
-  api.versionsFrom('1.0.3.1');
+  api.versionsFrom('1.0.1');
   api.addFiles('api/slack-server.js','server');
   api.addFiles('api/channels.js','server');
   api.addFiles('api/users.js','server');
