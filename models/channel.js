@@ -14,6 +14,7 @@ function Channel(collection){
 Channel.prototype.postMessage = function(message, options){
   options = options || {};
   options.channel = this.id;
-  options.message = message;
+  options.text = message;
+  options.username = options.username || "Slackbot";
   Meteor.call('slack-post', options);
 }
