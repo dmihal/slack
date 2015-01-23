@@ -14,10 +14,11 @@ Package.onUse(function(api) {
   api.use('service-configuration', 'server');
   
   api.versionsFrom('1.0.3.1');
-  api.addFiles('slack-server.js','server');
+  api.addFiles('api/slack-server.js','server');
   api.addFiles('channels.js','server');
   api.addFiles('slack-client.js','client');
-  api.addFiles('slack-models.js',['client','server']);
+  api.addFiles('models/slack-models.js',['client','server']);
+  api.addFiles('models/channel.js',['client','server']);
 
   api.export('Slack');
 });

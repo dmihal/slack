@@ -1,4 +1,3 @@
-Slack = {};  
 
 if (Meteor.isClient){
   Meteor.subscribe("SlackChannels");
@@ -17,8 +16,4 @@ Channel.prototype.postMessage = function(message, options){
   options.channel = this.id;
   options.message = message;
   Meteor.call('slack-post', options);
-}
-
-Slack.channels = function(){
-  return SlackChannels.find().fetch();
 }
