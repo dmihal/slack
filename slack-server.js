@@ -1,14 +1,15 @@
-var getAccessToken = function() {
+getAccessToken = function(userId) {
   try {
-    return Meteor.user().services.slack.accessToken;
+    var user = Meteor.users.findOne(userId);
+    return user.services.slack.accessToken;
   } catch(e) {
     return null;
   }
 }
 
 Meteor.methods({
-  'slack-channels-list': function(){
-    var token = getAccessToken();
+  'slack-channels-list': function(args){
+    var token = args.token || getAccessToken(this.userId);
     if (!token){
       throw new Error("User is not authenticated with Slack");
     }
@@ -30,7 +31,7 @@ Meteor.methods({
     }
   },
   'slack-post': function(args){
-    var token = getAccessToken();
+    var token = args.token || getAccessToken(this.userId);
     if (!token){
       throw new Error("User is not authenticated with Slack");
     }
