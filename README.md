@@ -15,11 +15,19 @@ Quick Start
 Documentation
 -------------
 
-### Slack.channels()
-Returns an array of Channel objects representing each public channel on the user's Slack team
+### Slack.channels([query])
+Returns an array of Channel objects representing each public channel on the user's Slack team.
 
-### Slack.users()
-Retusns an array of User objects 
+**Arguments**
+
+**`query`:** Channel ID or Mongo-style selector
+
+### Slack.users([query])
+Returns an array of User objects.
+
+**Arguments**
+
+**`query`:** User ID or Mongo-style selector
 
 ### Channel
 The Channel object contains all the properties of a [Slack Channel object](https://api.slack.com/types/channel).
