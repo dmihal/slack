@@ -32,6 +32,9 @@ Returns an array of User objects.
 ### Channel
 The Channel object contains all the properties of a [Slack Channel object](https://api.slack.com/types/channel).
 
+### Channel.members()
+Returns an array of users that have joined the channel
+
 ### Channel.postMessage(message, [options])
 Posts a message to the channel from a bot.
 

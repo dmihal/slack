@@ -9,6 +9,8 @@ SlackChannels = new Meteor.Collection("SlackChannels", {
 });
 
 function Channel(collection){
+  collection._members = collection.members;
+  delete collection.members;
   _.extend(this, collection);
 }
 Channel.prototype.postMessage = function(message, options){
@@ -17,4 +19,7 @@ Channel.prototype.postMessage = function(message, options){
   options.text = message;
   options.username = options.username || "Slackbot";
   Meteor.call('slack-post', options);
+};
+Channel.prototype.members = function(){
+  return this._members.map(Slack.users);
 }
