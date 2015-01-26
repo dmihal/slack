@@ -28,7 +28,7 @@ slackMethod = function(options){
       if (options.parser){
         return options.parser(response.data);
       } else {
-        return response.data.channels;
+        return response.data;
       }
     } else {
       throw new Error("Recieved response code " + response.statusCode);
