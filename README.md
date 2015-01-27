@@ -15,14 +15,25 @@ Quick Start
 Documentation
 -------------
 
-### Slack.channels()
-Returns an array of Channel objects representing each public channel on the user's Slack team
+### Slack.channels([query])
+Returns an array of Channel objects representing each public channel on the user's Slack team.
 
-### Slack.users()
-Retusns an array of User objects 
+**Arguments**
+
+**`query`:** Channel ID or Mongo-style selector
+
+### Slack.users([query])
+Returns an array of User objects.
+
+**Arguments**
+
+**`query`:** User ID or Mongo-style selector
 
 ### Channel
 The Channel object contains all the properties of a [Slack Channel object](https://api.slack.com/types/channel).
+
+### Channel.members()
+Returns an array of users that have joined the channel
 
 ### Channel.postMessage(message, [options])
 Posts a message to the channel from a bot.
@@ -35,3 +46,8 @@ Posts a message to the channel from a bot.
 ### User
 The User object contains all the properties of a [Slack User object](https://api.slack.com/types/user).
 
+Licence
+=======
+Copyright (c) 2015 David Mihal.
+
+This projected is licensed under the terms of the MIT license.

@@ -5,6 +5,9 @@ Meteor.publish("SlackChannels", function(){
       token: getAccessToken(this.userId)
     });
     collections.forEach(function(collection){
+      makeDate(collection,'created');
+      makeDate(collection,'purpose.last_set');
+      makeDate(collection,'topic.last_set');
       self.added("SlackChannels", collection.id, collection);
     });
     this.ready();
