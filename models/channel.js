@@ -11,6 +11,7 @@ SlackChannels = new Meteor.Collection("SlackChannels", {
 function Channel(collection){
   _.extend(this, collection);
 }
+Channel.prototype._messageSub = null;
 Channel.prototype.postMessage = function(message, options){
   options = options || {};
   options.channel = this.id;
@@ -18,3 +19,17 @@ Channel.prototype.postMessage = function(message, options){
   options.username = options.username || "Slackbot";
   Meteor.call('slack-post', options);
 }
+Channel.prototype.watchMessages = function(){
+  this._messageSub = Meteor.subscribe('SlackMessages',this.id);
+};
+Channel.prototype.stopWatchingMessages = function(){
+  if (this._messageSub){
+    this._messageSub.stop();
+  }
+};
+Channel.prototype.messages = function(){
+  if (!this._messageSub){
+    this.watchMessages();
+  }
+  return SlackMessages.find({channel: this.id});
+};
