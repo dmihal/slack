@@ -37,6 +37,10 @@ slackMethod = function(options){
 }
 
 Meteor.methods({
+  'slack-channels-history': slackMethod({
+    method: 'GET',
+    url: 'https://slack.com/api/channels.history'
+  }),
   'slack-channels-list': slackMethod({
     method: 'GET',
     url: 'https://slack.com/api/channels.list',
