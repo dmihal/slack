@@ -2,15 +2,15 @@ Slack = {};
 
 Slack.channels = function(query){
   if (Match.test(query, String)){
-    return SlackChannels.findOne(query);
+    return SlackChannels.findOne.apply(SlackChannels, arguments);
   } else {
-    return SlackChannels.find(query).fetch();
+    return SlackChannels.find.apply(SlackChannels, arguments).fetch();
   }
 };
 Slack.users = function(query){
   if (Match.test(query, String)){
-    return SlackUsers.findOne(query);
+    return SlackUsers.findOne.apply(SlackUsers, arguments);
   } else {
-    return SlackUsers.find(query).fetch();
+    return SlackUsers.find.apply(SlackUsers, arguments).fetch();
   }
 };

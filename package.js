@@ -1,6 +1,6 @@
 Package.describe({
   name: 'dmihal:slack',
-  version: '0.1.0',
+  version: '0.1.1',
   summary: 'Allows access to the Meteor API and other reactive features',
   git: 'https://github.com/dmihal/slack.git',
   documentation: 'README.md'
